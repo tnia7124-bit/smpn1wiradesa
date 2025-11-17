@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP Negeri 1 Wiradesa - Berprestasi Berkarakter</title>
+    <!-- Memuat Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Font Inter (default) dan menggunakan gaya elegan -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+        
+        /* Menggunakan Playfair Display untuk judul yang elegan dan Inter untuk konten */
+        .font-elegant {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar untuk elemen guru */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #3b82f6;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #e5e7eb;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-gray-800">
+
+    <!-- Konfigurasi Warna Tailwind (Biru dan Putih) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'smp-blue': '#1e3a8a', /* Darker Blue */
+                        'smp-light-blue': '#3b82f6', /* Accent Blue */
+                        'smp-white': '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Header / Hero Section - Dengan Background Foto Placeholder -->
+    <header id="beranda" class="relative h-screen flex items-center justify-center text-smp-white overflow-hidden">
+        <!-- Background Foto Placeholder -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url'foto sekolah.jpeg;">
+            <!-- Overlay Biru Gelap untuk Kontras -->
+            <div class="absolute inset-0 bg-smp-blue opacity-80"></div>
+        </div>
+
+        <!-- Konten Tagline -->
+        <div class="relative z-10 text-center p-6 md:p-12">
+            <h1 class="font-elegant text-4xl md:text-7xl font-bold tracking-wider mb-4 leading-tight">
+                SMP NEGERI 1 WIRADESA
+            </h1>
+            <p class="text-xl md:text-3xl font-light italic">
+                "SMP 1 WIRADESA BERPRESTASI BERKARAKTER"
+            </p>
+        </div>
+    </header>
+
+    <!-- Fixed/Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-smp-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-elegant text-smp-blue text-xl font-bold">SMPN 1 WIRADESA</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#beranda" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Beranda</a>
+                        <a href="#visi-misi" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Visi & Misi</a>
+                        <a href="#sejarah" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Sejarah</a>
+                        <a href="#prestasi" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Prestasi</a>
+                        <a href="#dokumentasi" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Dokumentasi</a>
+                        <a href="#guru" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Guru</a>
+                        <a href="#ekskul" class="text-gray-600 hover:text-smp-blue px-3 py-2 rounded-md text-sm font-medium transition duration-200">Ekskul</a>
+                    </div>
+                </div>
+                <!-- Tombol Menu Mobile (Hamburger Icon) -->
+                <button class="md:hidden text-gray-500 hover:text-smp-blue focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beranda" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Beranda</a>
+                <a href="#visi-misi" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Visi & Misi</a>
+                <a href="#sejarah" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Sejarah</a>
+                <a href="#prestasi" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Prestasi</a>
+                <a href="#dokumentasi" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Dokumentasi</a>
+                <a href="#guru" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Guru</a>
+                <a href="#ekskul" class="block text-gray-600 hover:bg-smp-blue hover:text-white px-3 py-2 rounded-md text-base font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden');">Ekskul</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- 1. Visi dan Misi Sekolah -->
+        <section id="visi-misi" class="my-16 p-8 bg-white shadow-xl rounded-xl border-t-4 border-smp-light-blue">
+            <h2 class="font-elegant text-3xl md:text-4xl font-bold text-smp-blue mb-6 border-b pb-2">Visi dan Misi Sekolah</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-elegant text-2xl font-semibold mb-3 text-smp-light-blue">Visi</h3>
+                    <p class="font-body italic text-gray-700 leading-relaxed">
+                        "Unggul Dalam Mutu Santun Dalam Perilaku Berwawasan Lingkungan Berdasarkan Imtaq dan Iptek"
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-elegant text-2xl font-semibold mb-3 text-smp-light-blue">Misi</h3>
+                    <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+                        <li>Mempersiapkan generasi yang berbudi pekerti luhur, memiliki pribadi yang sopan dan menjunjung nilai-nilai budaya dan karakter bangsa.</li>
+                        <li>Mempersiapkan generasi yang memiliki sikap kritis, kreatif, mandiri, peduli dan berbudaya lingkungan.</li>
+                        <li>Meningkatkan penguasaan ilmu pengetahuan dan teknologi dengan mengoptimalkan potensi akademik yang dimiliki oleh setiap siswa.</li>
+                        <li>Meningkatkan pelayanan pembelajaran peserta didik yang aktif, kreatif, efektif dan menyenangkan.</li>
+                        <li>Menggali, memupuk, mengembangkan bakat, minat prestasi siswa dalam bidang seni, olahraga, keterampilan melalui penyelenggaraan kegiatan ekstrakurikuler yang efektif.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Sejarah Sekolah -->
+        <section id="sejarah" class="my-16 p-8 bg-white shadow-xl rounded-xl border-t-4 border-smp-blue">
+            <h2 class="font-elegant text-3xl md:text-4xl font-bold text-smp-blue mb-6 border-b pb-2">Sejarah Sekolah</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                SMP Negeri 1 Wiradesa didirikan pada tahun 1976 dengan nama awal SMP Negeri Sragi Filyar Wirodeso. Pada 17 Februari 1979, statusnya berubah menjadi SMP Wirodeso melalui Surat Keputusan Kepala Kantor Wilayah Propinsi Jawa Tengah, lalu menjadi SMP Negeri 1 Wiradesa pada tahun 1983 sampai saat ini. Sekolah ini juga sempat menjadi Sekolah Standar Nasional (SSN) pada tahun 2004 dan Sekolah Percontohan SMP Kabupaten Pekalongan pada tahun 2005.
+            </p>
+        </section>
+
+        <!-- 3. Prestasi Sekolah -->
+        <section id="prestasi" class="my-16 p-8 bg-white shadow-xl rounded-xl border-t-4 border-smp-light-blue">
+            <h2 class="font-elegant text-3xl md:text-4xl font-bold text-smp-blue mb-6 border-b pb-2">Prestasi Sekolah</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Prestasi Akademik -->
+                <div>
+                    <h3 class="font-elegant text-2xl font-semibold mb-3 text-smp-light-blue">Prestasi Akademik</h3>
+                    <ul class="list-disc pl-5 space-y-3 text-gray-700">
+                        <li>Meraih juara satu Festival Bulan Bahasa tingkat kabupaten dan mewakili ke tingkat provinsi.</li>
+                        <li>Juara Umum Olimpiade Matematika tingkat kabupaten.</li>
+                        <li>Meraih berbagai penghargaan di bidang olimpiade akademik lainnya.</li>
+                    </ul>
+                </div>
+                
+                <!-- Prestasi Non-Akademik -->
+                <div>
+                    <h3 class="font-elegant text-2xl font-semibold mb-3 text-smp-light-blue">Prestasi Non-Akademik</h3>
+                    <ul class="list-disc pl-5 space-y-3 text-gray-700">
+                        <li>PKS (Patroli Keamanan Sekolah) mendapatkan juara tiga tingkat kabupaten.</li>
+                        <li>Cabang bola basket yang menjadi langganan juara.</li>
+                        <li>Prestasi menonjol di cabang pencak silat dan beberapa cabang olahraga serta seni lainnya.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Dokumentasi Sekolah (6 Kolom Grid) -->
+        <section id="dokumentasi" class="my-16 p-8 bg-white shadow-xl rounded-xl border-t-4 border-smp-blue">
+            <h2 class="font-elegant text-3xl md:text-4xl font-bold text-smp-blue mb-8 border-b pb-2">Dokumentasi Sekolah</h2>
+            <p class="text-sm text-gray-500 mb-6 italic">Gunakan 6 kotak di bawah ini untuk mengunggah foto (jpg) atau dokumen (pdf) sekolah Anda.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- 6 Kolom Placeholder -->
+                <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md group hover:shadow-lg transition duration-300">
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-600 p-4">
+                        <svg class="w-8 h-8 mb-2 text-smp-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-xs font-semibold">Dokumentasi 1 (Ganti File JPG/PDF)</p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md group hover:shadow-lg transition duration-300">
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-600 p-4">
+                        <svg class="w-8 h-8 mb-2 text-smp-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-xs font-semibold">Dokumentasi 2 (Ganti File JPG/PDF)</p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md group hover:shadow-lg transition duration-300">
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-600 p-4">
+                        <svg class="w-8 h-8 mb-2 text-smp-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-xs font-semibold">Dokumentasi 3 (Ganti File JPG/PDF)</p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md group hover:shadow-lg transition duration-300">
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-600 p-4">
+                        <svg class="w-8 h-8 mb-2 text-smp-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-xs font-semibold">Dokumentasi 4 (Ganti File JPG/PDF)</p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md group hover:shadow-lg transition duration-300">
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-600 p-4">
+                        <svg class="w-8 h-8 mb-2 text-smp-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-xs font-semibold">Dokumentasi 5 (Ganti File JPG/PDF)</p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md group hover:shadow-lg transition duration-300">
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-600 p-4">
+                        <svg class="w-8 h-8 mb-2 text-smp-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-xs font-semibold">Dokumentasi 6 (Ganti File JPG/PDF)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Guru dan Tenaga Kependidikan -->
+        <section id="guru" class="my-16 p-8 bg-white shadow-xl rounded-xl border-t-4 border-smp-light-blue">
+            <h2 class="font-elegant text-3xl md:text-4xl font-bold text-smp-blue mb-6 border-b pb-2">Guru dan Tenaga Kependidikan</h2>
+            
+            <div class="bg-gray-100 p-6 rounded-lg shadow-inner">
+                <h3 class="font-elegant text-xl font-semibold mb-4 text-smp-blue">Daftar Tenaga Pendidik dan Kependidikan</h3>
+                
+                <!-- Kotak Scrollable untuk Daftar Guru -->
+                <div class="custom-scrollbar h-96 overflow-y-scroll pr-4">
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200 border-l-4 border-smp-light-blue">
+                            <span class="font-semibold text-smp-blue">Kepala Sekolah:</span> Mukhidin, S.Pd
+                        </li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">2. Hj. Ni'mah, S.Pd., M.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">3. Damiri, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">4. Kunaenah, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">5. Nurokhmat Teguh Prasetya, S.Pd., M.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">6. Reni Sulistyati, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">7. Untung Toto Susilo, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">8. Catur Wahyu Widodo, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">9. Dra. Wien Murniati, M.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">10. Nur Firdaus, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">11. Sri Widati, S.Pd., M.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">12. Arubi, S.Pd.I., M.Pd.I.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">13. Siti Kholifah, S.Ag., M.Si.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">14. Istiqomah, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">15. Nur Baiti, S.Pd.I.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">16. Wahyuningsih Puji Lestari, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">17. Dra. Sabariyah Kusrinah</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">18. M. Syukron Ni'am, S.Pd., M.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">19. Maghfiroch, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">20. Diyan Hari Pribowo, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">21. Ummi Djamilah, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">22. Savitri Andriani, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">23. Widyantoro, S.Kom.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">24. Yuni Pratiwi. S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">25. Pesal Agus Repsiani, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">26. Ria Wahyuningsih, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">27. Muhammad Irawan Syah, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">28. Leni Hartarti, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">29. Atika Milatina,SPd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">30. Firda Rokhmatika Melly Sabrina S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">31. Dhini Nurul Hayati, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">32. Sulung Gugah Pulung Aji, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">33. Mardwisoco, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">34. M. Zaky Mubarok, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">35. Karina Bela, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">36. Ovie Khoirun Nisa, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">37. Triyas Nugroho S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">38. Sri Yuliani, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">39. Fikri Helmi Imran</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">40. Halim Falahudin, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">41. Nabila Prastuti Puspitarini, S.Pd</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">42. Septilia Adhi Tristika, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">43. Eva Laily harum Mawarni, S.Pd.</li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200">44. Feki Hermanto Radelawa, S.Pd.K</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Ekstrakurikuler Aktif -->
+        <section id="ekskul" class="my-16 p-8 bg-white shadow-xl rounded-xl border-t-4 border-smp-blue">
+            <h2 class="font-elegant text-3xl md:text-4xl font-bold text-smp-blue mb-6 border-b pb-2">Ekstrakurikuler Aktif</h2>
+            <p class="mb-6 text-gray-700">Saat ini terdapat 7 ekstrakurikuler aktif, terdiri dari 1 ekstrakurikuler akademik dan 6 non-akademik.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Ekskul Akademik -->
+                <div>
+                    <h3 class="font-elegant text-2xl font-semibold mb-3 text-smp-light-blue">Ekstrakurikuler Akademik</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Pembinaan mata pelajaran untuk Olimpiade (OSN).</li>
+                    </ul>
+                </div>
+                
+                <!-- Ekskul Non-Akademik -->
+                <div>
+                    <h3 class="font-elegant text-2xl font-semibold mb-3 text-smp-light-blue">Ekstrakurikuler Non-Akademik</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Pramuka</li>
+                        <li>PMR (Palang Merah Remaja)</li>
+                        <li>PKS (Patroli Keamanan Sekolah)</li>
+                        <li>Bola Basket</li>
+                        <li>Pencak Silat</li>
+                        <li>Musik / Paduan Suara</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer / Alamat dan Kontak -->
+    <footer id="alamat" class="bg-smp-blue text-smp-white p-8 mt-16 rounded-t-xl shadow-2xl">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="font-elegant text-2xl font-bold mb-4">Hubungi Kami</h3>
+            <p class="mb-2 text-lg">
+                Jl. A. Yani No.400, Desa Pekuncen, Kecamatan Wiradesa, <br class="md:hidden"> Kabupaten Pekalongan, Jawa Tengah.
+            </p>
+            <p class="mb-6 text-xl font-semibold text-smp-light-blue">
+                Telp: (0285) 4417255
+            </p>
+            <div class="mt-6 pt-4 border-t border-smp-light-blue border-opacity-30">
+                <p class="text-sm text-gray-300">&copy; 2025 SMP Negeri 1 Wiradesa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
